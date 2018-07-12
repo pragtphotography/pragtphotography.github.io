@@ -1,0 +1,14 @@
+{
+    "name": "hans-pragt-photography-website",
+    "description": "My photography landing page.",
+    "version": "0.0.1",
+    "main": "index.html",
+    "scripts": {
+        "build": "gulp --gulpfile configuration/gulp.config.js build",
+        "develop": "gulp --gulpfile configuration/gulp.config.js develop"
+    },
+    "devDependencies": {
+        "gulp": "3.9.1",
+        "gulp-connect": "5.5.0"
+    }
+}
