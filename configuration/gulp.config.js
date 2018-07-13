@@ -13,11 +13,12 @@ gulp.task(
   'build',
   [
     'deploy-markup',
-    'deploy-styles'
+    'deploy-styles',
+    'deploy-images'
   ]
 );
 
-// #region HTML
+// #region Markup
 
 gulp.task(
   'deploy-markup',
@@ -30,7 +31,7 @@ gulp.task(
   }
 );
 
-// #endregion HTML
+// #endregion Markup
 
 // #region Styles
 
@@ -47,10 +48,23 @@ gulp.task(
 
 // #endregion Styles
 
+// #region Images
+
+gulp.task(
+  'deploy-images',
+  () => {
+    return gulp
+      .src('../source/images/**/*.*')
+      .pipe(gulp.dest('../docs/images'))
+      .pipe(connect.reload());
+  }
+)
+
+// #endregion Images
+
 // #endregion Building
 
 // #region Development
-
 
 gulp.task(
   'develop',
@@ -68,6 +82,7 @@ gulp.task(
   () => {
     gulp.watch('../source/html/**/*.html', ['deploy-markup']);
     gulp.watch('../source/css/**/*.scss', ['deploy-styles']);
+    gulp.watch('../source/images/**/*.*', ['deploy-images']);
   }
 )
 

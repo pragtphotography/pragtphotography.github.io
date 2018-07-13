@@ -9,12 +9,23 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .container {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100%; }
   .container .header {
     text-align: center;
     padding: 30px;
     font-family: Oswald;
     font-size: 50px;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 3px; }
+  .container .gallery {
+    flex: 1;
+    border-top: 4px solid black;
     border-bottom: 4px solid black; }
+  .container .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px; }
+    .container .links .link img {
+      height: 70px; }
