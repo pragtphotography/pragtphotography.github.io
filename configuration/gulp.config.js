@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const connect = require('gulp-connect');
+const htmlmin = require('gulp-htmlmin');
+const sass = require('gulp-sass');
 
 gulp.task('default', () => {
   console.log('building...');
@@ -7,28 +9,43 @@ gulp.task('default', () => {
 
 // #region Building
 
-
+gulp.task(
+  'build',
+  [
+    'deploy-markup',
+    'deploy-styles'
+  ]
+);
 
 // #region HTML
 
 gulp.task(
-  'deploy-html',
+  'deploy-markup',
   () => {
     return gulp
       .src('../source/html/index.html')
+      .pipe(htmlmin({collapseWhitespace: true}))
       .pipe(gulp.dest('../docs'))
-      .pipe(connect.reload())
+      .pipe(connect.reload());
   }
 );
 
-gulp.task(
-  'build',
-  [
-    'deploy-html'
-  ]
-);
-
 // #endregion HTML
+
+// #region Styles
+
+gulp.task(
+  'deploy-styles',
+  () => {
+    return gulp
+      .src('../source/css/styles.scss')
+      .pipe(sass())
+      .pipe(gulp.dest('../docs/styles'))
+      .pipe(connect.reload());
+  }
+)
+
+// #endregion Styles
 
 // #endregion Building
 
@@ -49,7 +66,8 @@ gulp.task(
 gulp.task(
   'watch',
   () => {
-    gulp.watch('../source/**/*.html', ['deploy-html'])
+    gulp.watch('../source/html/**/*.html', ['deploy-markup']);
+    gulp.watch('../source/css/**/*.scss', ['deploy-styles']);
   }
 )
 
