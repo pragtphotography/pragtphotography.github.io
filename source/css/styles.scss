@@ -17,28 +17,88 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
+$PrimaryFont:       'Oswald';
+$LargeFontSize:     50px;
+
 // #endregion Fonts
 
+// #region Colors
+
+$PageColor:         white;
+$PrimaryColor:      black;
+$SecondaryColor:    grey;
+
+// #endregion Colors
+
 .container {
+  background-color: $PageColor;
+
   display:          flex;
   flex-direction:   column;
   height:           100%;
+  max-height:       100%;
 
   .header {
     text-align:       center;
 
-    padding:          30px;
+    padding:          10px;
 
-    font-family:      Oswald;
-    font-size:        50px;
-    font-weight:      600;
-    letter-spacing:   3px;
+    font-family:      $PrimaryFont;
+    font-size:        $LargeFontSize;
+    font-weight:      500;
+    letter-spacing:   -1px;
+
+    .deemphasized {
+      color:            grey;
+    }
   }
 
   .gallery {
     flex:             1;
-    border-top:       4px solid black;
-    border-bottom:    4px solid black;
+    
+
+    //padding:          30px;
+    
+    display:          flex;
+    flex-direction:   row;
+
+    .margin {
+      flex:             1;
+    }
+
+    .control {
+      padding:          20px;
+
+      font-family:      $PrimaryFont;
+      font-size:        $LargeFontSize;
+      cursor:           pointer;
+
+      display:          flex;
+      align-items:      center;
+
+      &:hover {
+        color:            $SecondaryColor;
+      }
+    }
+
+    .photographs {
+      flex:             0;
+      display:          flex;
+
+      .slide {
+        border-top:       2px solid $PrimaryColor;
+        border-bottom:    2px solid $PrimaryColor;
+        padding: 40px;
+
+        flex:             1;
+        text-align:       center;
+        display:          none;
+
+        img {
+          height:           100%;
+        }
+      }
+    }
   }
 
   .links {
@@ -46,13 +106,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     flex-direction:   row;
     justify-content:  center;
 
-    padding:          30px;
+    padding:          10px;
 
     .link {
       padding:          8px;
 
       img {
-        height:           70px;
+        height:           40px;
       }
     }
   }

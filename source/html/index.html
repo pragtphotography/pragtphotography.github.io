@@ -3,7 +3,43 @@
   <head>
     <title>Hans Pragt Photography</title>
 
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Scripts -->
+    <script>
+      let slideIndex = 0;
+      window.onload = () => ShowSlide(slideIndex);
+
+      function PreviousSlide() {
+        slideIndex = ShowSlide(slideIndex - 1);
+      }
+
+      function NextSlide() {
+        slideIndex = ShowSlide(slideIndex + 1);
+      }
+
+      function ShowSlide(n) {
+        let slides = document.getElementsByClassName("slide");
+        
+        let toShowIndex = n;
+        if (toShowIndex < 0) {
+          toShowIndex = slides.length - 1;
+        } 
+
+        if (toShowIndex >= slides.length) {
+          toShowIndex = 0;
+        }
+
+        for (let elementIndex = 0; elementIndex < slides.length; elementIndex++) {
+          slides[elementIndex].style.display = "none";
+        }
+
+        slides[toShowIndex].style.display = "block";
+        return toShowIndex;
+      }
+    </script>
+
   </head>
 
   <body>
@@ -13,12 +49,34 @@
       <!-- Header -->
       <div class="header">
 
-      <h1>Pragt Photography</h1>
+        <h1>Hans Pragt <span class="deemphasized">Photography</span></h1>
 
       </div>
 
       <!-- Photographs -->
       <div class="gallery">
+
+        <div class="margin"></div>
+
+        <!-- Previous -->
+        <div class="previous control" onclick="PreviousSlide();">
+          &lt;
+        </div>
+
+        <!-- Photograps -->
+        <div class="photographs">
+          <div class="slide"><img src="./images/photos/DSC_0499.jpg"></div>
+          <div class="slide"><img src="./images/photos/DSC_0205.jpg"></div>
+          <div class="slide"><img src="./images/photos/DSC_0939.jpg"></div>
+        </div>
+
+        <!-- Next -->
+        <div class="next control" onclick="NextSlide();">
+          &gt;
+        </div>
+
+        <div class="margin"></div>
+
       </div>
 
       <!-- Links -->
