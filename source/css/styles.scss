@@ -18,7 +18,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
 $PrimaryFont:       'Oswald';
-$LargeFontSize:     50px;
+$LargeFontSize:     5em;
 
 // #endregion Fonts
 
@@ -30,91 +30,56 @@ $SecondaryColor:    grey;
 
 // #endregion Colors
 
-.container {
-  background-color: $PageColor;
+body {
 
-  display:          flex;
-  flex-direction:   column;
-  height:           100%;
-  max-height:       100%;
+  .container {
 
-  .header {
-    text-align:       center;
-
-    padding:          10px;
-
-    font-family:      $PrimaryFont;
-    font-size:        $LargeFontSize;
-    font-weight:      500;
-    letter-spacing:   -1px;
-
-    .deemphasized {
-      color:            grey;
-    }
-  }
-
-  .gallery {
-    flex:             1;
-    
-
-    //padding:          30px;
+    height:           100%;
     
     display:          flex;
-    flex-direction:   row;
+    flex-direction:   column;
+    align-items:      center;
 
-    .margin {
-      flex:             1;
+    .header {
+      width:          100%;
+      padding:        .1em;
+
+      flex:           1;
+      display:        flex;
+      align-items:    flex-end;
+      justify-content: center;
+
+      font-size:      $LargeFontSize;
+      font-family:    $PrimaryFont;
     }
 
-    .control {
-      padding:          20px;
+    .image {
+      margin:         1em 0 2em 0;
 
-      font-family:      $PrimaryFont;
-      font-size:        $LargeFontSize;
-      cursor:           pointer;
-
-      display:          flex;
-      align-items:      center;
-
-      &:hover {
-        color:            $SecondaryColor;
+      img {
+        max-height:   50vh;
+        max-width:    90vw;
       }
     }
 
-    .photographs {
-      flex:             0;
-      display:          flex;
+    .footer {
+      flex:           1;
 
-      .slide {
-        border-top:       2px solid $PrimaryColor;
-        border-bottom:    2px solid $PrimaryColor;
-        padding: 40px;
+      display:        flex;
+      flex-direction: row;
+      justify-content: center;
+      width:          100%;
 
-        flex:             1;
-        text-align:       center;
-        display:          none;
+      .link {
+        margin:       0 .5em;
 
         img {
-          height:           100%;
+          width:      $LargeFontSize;
+          height:     $LargeFontSize;
         }
       }
     }
-  }
 
-  .links {
-    display:          flex;
-    flex-direction:   row;
-    justify-content:  center;
-
-    padding:          10px;
-
-    .link {
-      padding:          8px;
-
-      img {
-        height:           40px;
-      }
-    }
   }
 
 }
