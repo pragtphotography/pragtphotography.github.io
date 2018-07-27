@@ -16,66 +16,56 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 // #region Fonts
 
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
 
-$PrimaryFont:       'Oswald';
-$LargeFontSize:     5em;
+$PrimaryFont:       'Cutive Mono';
+$LargeFontSize:     6em;
 
 // #endregion Fonts
 
 // #region Colors
 
-$PageColor:         white;
-$PrimaryColor:      black;
-$SecondaryColor:    grey;
+$PageColor:         #333333;
+$PrimaryColor:      #CCCC00;
+$SecondaryColor:    #333333;
 
 // #endregion Colors
 
 body {
+  background-color:   $PageColor;
+
+  margin:             3em;
 
   .container {
-
     height:           100%;
-    
     display:          flex;
-    flex-direction:   column;
-    align-items:      center;
-
+    flex-direction:   column; 
+    
     .header {
-      width:          100%;
-      padding:        .1em;
+      background-color: $PrimaryColor;
 
-      flex:           1;
-      display:        flex;
-      align-items:    flex-end;
-      justify-content: center;
-
-      font-size:      $LargeFontSize;
-      font-family:    $PrimaryFont;
-    }
-
-    .image {
-      margin:         1em 0 2em 0;
-
-      img {
-        max-height:   50vh;
-        max-width:    90vw;
-      }
+      font-size:        $LargeFontSize;
+      font-family:      $PrimaryFont;
+      color:            $SecondaryColor;
+      letter-spacing:   0.1em;
     }
 
     .footer {
-      flex:           1;
+      display:          flex;
+      flex-direction:   column;
 
-      display:        flex;
-      flex-direction: row;
-      justify-content: center;
-      width:          100%;
+      border:           1em solid $PrimaryColor;
 
       .link {
-        margin:       0 .5em;
+        padding:       0.1em;
 
-        img {
-          width:      $LargeFontSize;
-          height:     $LargeFontSize;
+        font-family:  $PrimaryFont;
+        color:        $PrimaryColor;
+        font-size:    $LargeFontSize;
+        text-decoration: none;
+
+        &:hover {
+          background-color: transparentize($PrimaryColor, .8);
         }
       }
     }

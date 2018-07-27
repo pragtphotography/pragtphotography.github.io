@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=Cutive+Mono");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -7,33 +8,28 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font: inherit;
   vertical-align: baseline; }
 
-body .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  body .container .header {
-    width: 100%;
-    padding: .1em;
-    flex: 1;
+body {
+  background-color: #333333;
+  margin: 3em; }
+  body .container {
+    height: 100%;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    font-size: 5em;
-    font-family: "Oswald"; }
-  body .container .image {
-    margin: 1em 0 2em 0; }
-    body .container .image img {
-      max-height: 50vh;
-      max-width: 90vw; }
-  body .container .footer {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%; }
-    body .container .footer .link {
-      margin: 0 .5em; }
-      body .container .footer .link img {
-        width: 5em;
-        height: 5em; }
+    flex-direction: column; }
+    body .container .header {
+      background-color: #CCCC00;
+      font-size: 6em;
+      font-family: "Cutive Mono";
+      color: #333333;
+      letter-spacing: 0.1em; }
+    body .container .footer {
+      display: flex;
+      flex-direction: column;
+      border: 1em solid #CCCC00; }
+      body .container .footer .link {
+        padding: 0.1em;
+        font-family: "Cutive Mono";
+        color: #CCCC00;
+        font-size: 6em;
+        text-decoration: none; }
+        body .container .footer .link:hover {
+          background-color: rgba(204, 204, 0, 0.2); }
