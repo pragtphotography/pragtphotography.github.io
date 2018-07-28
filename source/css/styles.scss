@@ -16,10 +16,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 // #region Fonts
 
 @import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400');
 
-$PrimaryFont:       'Cutive Mono';
+$PrimaryFont:       'Source Code Pro';
 $LargeFontSize:     6em;
+$LargeFontWeight:   200;
 
 // #endregion Fonts
 
@@ -35,26 +36,39 @@ body {
   background-color:   $PageColor;
 
   margin:             3em;
+  display:            flex;
+  justify-content:    center;
 
   .container {
-    height:           100%;
+    flex:             1;
+    
+    max-width:        1000px;
+    
     display:          flex;
     flex-direction:   column; 
     
+    .browser {
+      background-color: $PrimaryColor;
+      padding:          1em;
+    }
+
     .header {
       background-color: $PrimaryColor;
 
       font-size:        $LargeFontSize;
       font-family:      $PrimaryFont;
+      font-weight:      $LargeFontWeight;
       color:            $SecondaryColor;
       letter-spacing:   0.1em;
+
+      padding-bottom:   0.1em;
     }
 
     .footer {
+      background-color: $SecondaryColor;
+
       display:          flex;
       flex-direction:   column;
-
-      border:           1em solid $PrimaryColor;
 
       .link {
         padding:       0.1em;
@@ -62,6 +76,7 @@ body {
         font-family:  $PrimaryFont;
         color:        $PrimaryColor;
         font-size:    $LargeFontSize;
+        font-weight:  $LargeFontWeight;
         text-decoration: none;
 
         &:hover {
