@@ -15,10 +15,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 // #region Fonts
 
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400');
+@import url('https://fonts.googleapis.com/css?family=Oswald:200');
 
-$PrimaryFont:       'Source Code Pro';
+$PrimaryFont:       'Oswald';
 $LargeFontSize:     5em;
 $LargeFontWeight:   200;
 
@@ -96,25 +95,36 @@ body {
       font-family:      $PrimaryFont;
       font-weight:      $LargeFontWeight;
       color:            $SecondaryColor;
+      text-align:       center;
 
       padding-bottom:   0.2em;
     }
 
-    .file-list {
-      background-color: $SecondaryColor;
+    .link-list {
       border-radius:    1em;
 
       display:          flex;
       flex-direction:   column;
 
       .link {
-        padding:       0.1em;
+        display:      flex;
+        flex-direction: row;
+
+        padding:      0.1em;
 
         font-family:  $PrimaryFont;
-        color:        $PrimaryColor;
+        color:        $SecondaryColor;
         font-size:    4em;
         font-weight:  $LargeFontWeight;
-        text-decoration: none;
+
+        .href {
+          flex:             1;
+          text-align:       right;
+          a {
+            color:            $SecondaryColor;
+            text-decoration:  none;
+          }
+        }
 
         &:hover {
           background-color: transparentize($PrimaryColor, .8);

@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Oswald");
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400");
+@import url("https://fonts.googleapis.com/css?family=Oswald:200");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -47,23 +46,30 @@ body {
     body .container .header {
       background-color: #2D92FF;
       font-size: 5em;
-      font-family: "Source Code Pro";
+      font-family: "Oswald";
       font-weight: 200;
       color: #FEFEFD;
+      text-align: center;
       padding-bottom: 0.2em; }
-    body .container .file-list {
-      background-color: #FEFEFD;
+    body .container .link-list {
       border-radius: 1em;
       display: flex;
       flex-direction: column; }
-      body .container .file-list .link {
+      body .container .link-list .link {
+        display: flex;
+        flex-direction: row;
         padding: 0.1em;
-        font-family: "Source Code Pro";
-        color: #2D92FF;
+        font-family: "Oswald";
+        color: #FEFEFD;
         font-size: 4em;
-        font-weight: 200;
-        text-decoration: none; }
-        body .container .file-list .link:hover {
+        font-weight: 200; }
+        body .container .link-list .link .href {
+          flex: 1;
+          text-align: right; }
+          body .container .link-list .link .href a {
+            color: #FEFEFD;
+            text-decoration: none; }
+        body .container .link-list .link:hover {
           background-color: rgba(45, 146, 255, 0.2); }
     body .container .footer {
       text-align: right; }
