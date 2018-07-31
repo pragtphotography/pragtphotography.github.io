@@ -19,16 +19,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400');
 
 $PrimaryFont:       'Source Code Pro';
-$LargeFontSize:     6em;
+$LargeFontSize:     5em;
 $LargeFontWeight:   200;
 
 // #endregion Fonts
 
 // #region Colors
 
-$PageColor:         #333333;
-$PrimaryColor:      #CCCC00;
-$SecondaryColor:    #333333;
+$PageColor:               #E2E7EB;
+$PrimaryColor:            #2D92FF;
+$SecondaryColor:          #FEFEFD;
+$HightlighColor:          #EAE552;
+$SecondaryHighlightColor: #CC6328;
 
 // #endregion Colors
 
@@ -45,11 +47,46 @@ body {
     max-width:        1000px;
     
     display:          flex;
-    flex-direction:   column; 
+    flex-direction:   column;
+    justify-content:  center;
     
     .browser {
       background-color: $PrimaryColor;
       padding:          1em;
+      border-radius:    1em;
+      z-index:          10;
+    }
+
+    .top {
+      border:           1em solid $HightlighColor;
+      border-radius:    1em;
+      height:           2em;
+      margin-bottom:    -3em;
+
+      &.outer {
+        border-color:  $SecondaryHighlightColor;
+      }
+
+      &.inner {
+        border-color: $HightlighColor;
+      }
+    }
+
+    .bottom {
+      border:           1em solid $HightlighColor;
+      border-radius:    1em;
+      height:           2em;
+      margin-top:      -3em;
+
+      &.inner {
+        border-color:  $HightlighColor;
+        z-index:       7;
+      }
+
+      &.outer {
+        border-color: $SecondaryHighlightColor;
+        z-index:      5;
+      }
     }
 
     .header {
@@ -59,13 +96,13 @@ body {
       font-family:      $PrimaryFont;
       font-weight:      $LargeFontWeight;
       color:            $SecondaryColor;
-      letter-spacing:   0.1em;
 
-      padding-bottom:   0.1em;
+      padding-bottom:   0.2em;
     }
 
-    .footer {
+    .file-list {
       background-color: $SecondaryColor;
+      border-radius:    1em;
 
       display:          flex;
       flex-direction:   column;
@@ -75,13 +112,22 @@ body {
 
         font-family:  $PrimaryFont;
         color:        $PrimaryColor;
-        font-size:    $LargeFontSize;
+        font-size:    4em;
         font-weight:  $LargeFontWeight;
         text-decoration: none;
 
         &:hover {
           background-color: transparentize($PrimaryColor, .8);
         }
+      }
+    }
+
+    .footer {
+      text-align:   right;
+
+      img {
+        width:        10em;
+        height:       10em;
       }
     }
 

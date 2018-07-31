@@ -9,7 +9,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline; }
 
 body {
-  background-color: #333333;
+  background-color: #E2E7EB;
   margin: 3em;
   display: flex;
   justify-content: center; }
@@ -17,28 +17,56 @@ body {
     flex: 1;
     max-width: 1000px;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    justify-content: center; }
     body .container .browser {
-      background-color: #CCCC00;
-      padding: 1em; }
+      background-color: #2D92FF;
+      padding: 1em;
+      border-radius: 1em;
+      z-index: 10; }
+    body .container .top {
+      border: 1em solid #EAE552;
+      border-radius: 1em;
+      height: 2em;
+      margin-bottom: -3em; }
+      body .container .top.outer {
+        border-color: #CC6328; }
+      body .container .top.inner {
+        border-color: #EAE552; }
+    body .container .bottom {
+      border: 1em solid #EAE552;
+      border-radius: 1em;
+      height: 2em;
+      margin-top: -3em; }
+      body .container .bottom.inner {
+        border-color: #EAE552;
+        z-index: 7; }
+      body .container .bottom.outer {
+        border-color: #CC6328;
+        z-index: 5; }
     body .container .header {
-      background-color: #CCCC00;
-      font-size: 6em;
+      background-color: #2D92FF;
+      font-size: 5em;
       font-family: "Source Code Pro";
       font-weight: 200;
-      color: #333333;
-      letter-spacing: 0.1em;
-      padding-bottom: 0.1em; }
-    body .container .footer {
-      background-color: #333333;
+      color: #FEFEFD;
+      padding-bottom: 0.2em; }
+    body .container .file-list {
+      background-color: #FEFEFD;
+      border-radius: 1em;
       display: flex;
       flex-direction: column; }
-      body .container .footer .link {
+      body .container .file-list .link {
         padding: 0.1em;
         font-family: "Source Code Pro";
-        color: #CCCC00;
-        font-size: 6em;
+        color: #2D92FF;
+        font-size: 4em;
         font-weight: 200;
         text-decoration: none; }
-        body .container .footer .link:hover {
-          background-color: rgba(204, 204, 0, 0.2); }
+        body .container .file-list .link:hover {
+          background-color: rgba(45, 146, 255, 0.2); }
+    body .container .footer {
+      text-align: right; }
+      body .container .footer img {
+        width: 10em;
+        height: 10em; }
