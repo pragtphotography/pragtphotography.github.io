@@ -15,9 +15,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 // #region Fonts
 
-@import url('https://fonts.googleapis.com/css?family=Oswald:200');
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,700');
 
 $PrimaryFont:       'Oswald';
+
+$HeaderFontSize:    7em;
+$HeaderFontWeight:  700;
+
 $LargeFontSize:     5em;
 $LargeFontWeight:   200;
 
@@ -36,7 +40,7 @@ $SecondaryHighlightColor: #CC6328;
 body {
   background-color:   $PageColor;
 
-  margin:             3em;
+  margin:             0 3em;
   display:            flex;
   justify-content:    center;
 
@@ -49,7 +53,25 @@ body {
     flex-direction:   column;
     justify-content:  center;
     
-    .browser {
+    .header, .footer {
+      font-size:      $HeaderFontSize;
+      font-family:    $PrimaryFont;
+      font-weight:    $HeaderFontWeight;
+      letter-spacing: .08em;
+      color:          $SecondaryHighlightColor;
+    }
+
+    .header {
+      margin-bottom:  -.29em;
+      margin-left:    .1em;
+    }
+
+    .footer {
+      margin-top:     -.39em;
+      text-align:     right;
+    }
+
+    .link-list {
       background-color: $PrimaryColor;
       padding:          1em;
       border-radius:    1em;
@@ -88,18 +110,6 @@ body {
       }
     }
 
-    .header {
-      background-color: $PrimaryColor;
-
-      font-size:        $LargeFontSize;
-      font-family:      $PrimaryFont;
-      font-weight:      $LargeFontWeight;
-      color:            $SecondaryColor;
-      text-align:       center;
-
-      padding-bottom:   0.2em;
-    }
-
     .link-list {
       border-radius:    1em;
 
@@ -125,19 +135,6 @@ body {
             text-decoration:  none;
           }
         }
-
-        &:hover {
-          background-color: transparentize($PrimaryColor, .8);
-        }
-      }
-    }
-
-    .footer {
-      text-align:   right;
-
-      img {
-        width:        10em;
-        height:       10em;
       }
     }
 
